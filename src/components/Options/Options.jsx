@@ -1,10 +1,28 @@
-function Options({ feedbackTypes }) {
+import css from "../Options/Options.module.css";
+
+export default function Options({
+  updateFeedback
+}) {
   return (
-    <div>
-      <h2>Options</h2>
-      <p>Good: {feedbackTypes.good}</p>
-      <p>Neutral: {feedbackTypes.neutral}</p>
-      <p>Bad: {feedbackTypes.bad}</p>
-    </div>
+    <ul className={css.wrapper}>
+      <li>
+        <button onClick={() => updateFeedback("good")} className={css.button}>
+          Good
+        </button>
+      </li>
+      <li>
+        <button
+          onClick={() => updateFeedback("neutral")}
+          className={css.button}
+        >
+          Neutral
+        </button>
+      </li>
+      <li>
+        <button onClick={() => updateFeedback("bad")} className={css.button}>
+          Bad
+        </button>
+      </li>
+      </ul>
   );
 }

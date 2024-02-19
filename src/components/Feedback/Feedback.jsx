@@ -1,10 +1,11 @@
-function Feedback({ feedbackTypes, onFeedbackSelect }) {
+import css from "../Feedback/Feedback.module.css";
+
+export default function Feedback({ clicks }) {
   return (
-    <div>
-      <h2>Feedback</h2>
-      <button onClick={() => onFeedbackSelect("good")}>Good</button>
-      <button onClick={() => onFeedbackSelect("neutral")}>Neutral</button>
-      <button onClick={() => onFeedbackSelect("bad")}>Bad</button>
-    </div>
+    <ul>
+      <li className={css.item}>Good:{clicks.good}</li>
+      <li className={css.item}>Neutral:{clicks.neutral}</li>
+      <li className={css.item}>Bad:{clicks.bad}</li>
+    </ul>
   );
 }
